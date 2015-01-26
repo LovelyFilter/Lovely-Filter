@@ -12,4 +12,4 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require bootstrap-3.2.0.min

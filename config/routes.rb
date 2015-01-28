@@ -23,4 +23,6 @@ get "/tags_search", to: "sites#search"
 
   get 'users/edit'
 
+  get '/photos/page/:next_max_id', to: 'photos#photo_page'
+
 end

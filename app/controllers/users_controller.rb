@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @media = current_user.user_media_feed()
     render "users/profile"
   end
 

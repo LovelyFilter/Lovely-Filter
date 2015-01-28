@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-3.2.0.min
+*/
+
+.upper-container {
+	height: 300px;
+	width: 100%;
+}
+
+.lower-main-container {
+	background-color: RGBA(98, 185, 175, 1);
+	height: 400px;
+	width: 100%;
+
+}
+
+.lower-container {
+	padding-top: 50px;
+	margin-left: 200px;
+
+}

@@ -22,4 +22,6 @@ get "/logout", to: "sessions#destroy"
 
   get 'users/edit'
 
+  get '/photos/page/:next_max_id', to: 'photos#photo_page'
+
 end

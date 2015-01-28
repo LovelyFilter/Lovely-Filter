@@ -21,30 +21,44 @@ module SessionsHelper
   end
 
   def login(code)
-      # Once user authenticates
-    #  their access_token
-    #  will be made available
-    #  in the response to this
-    #  method...
+
     res = Instagram.get_access_token(code, redirect_uri: CALLBACK_URL)
-    # The access token 
-    # is then put into the
-    # session
-    session[:access_token] = res.access_token
+
+    user_params = fetch_instagram_user(res.access_token)
+    #raise user_params.inspect
+
+    # raise user_params.inspect
+    @current_user =  User.find_by({username: user_params[:username]})
+
+    ## Update or Create a current_user
+    unless @current_user
+      #raise user_params.inspect
+      @current_user = User.create!(user_params)
+    else
+      @current_user.update(user_params)
+    end
+    session[:user_id] = @current_user.id
+    current_user
   end
 
   def logout
-    session[:access_token] = nil
+    @current_user = session[:user_id] = nil
   end
 
   def logged_in?
-    if session[:access_token].nil?
+    if current_user.nil?
       redirect_to root_path
     end
   end
 
+  def fetch_instagram_user(access_token)
+    client = Instagram.client(:access_token => access_token)
+    user_params = client.user
+    user_params[:user_id] = user_params[:id]
+    user_params.reject { | key , _| !User.column_names.include?(key) || key == "id"}
+  end
+
   def current_user
-    client ||= Instagram.client(:access_token => session[:access_token])
-    client.user
+    @current_user ||= User.find_by({id: session[:user_id]})
   end
 end

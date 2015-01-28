@@ -8,43 +8,49 @@ module SessionsHelper
   #   callback to match the one above,
   #   at least while in development.
 
-  Instagram.configure do |config|
-    config.client_id = ENV["CLIENT_ID"] # <--- NOTE THE CHANGE
-    config.client_secret = ENV["CLIENT_SECRET"] #<---- NOTE THE CHANGE
-    # For secured endpoints only
-    #config.client_ips = '<Comma separated list of IPs>'
-  end
 
-    
   def instagram_authorize()
      redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
   end
 
   def login(code)
-      # Once user authenticates
-    #  their access_token
-    #  will be made available
-    #  in the response to this
-    #  method...
     res = Instagram.get_access_token(code, redirect_uri: CALLBACK_URL)
-    # The access token 
-    # is then put into the
-    # session
-    session[:access_token] = res.access_token
+
+    user_params = fetch_instagram_user(res.access_token)
+
+    @current_user =  User.find_by({username: user_params[:username]})
+
+    ## Update or Create a current_user
+    unless @current_user
+      @current_user = User.create!(user_params)
+    else
+      @current_user.update(user_params)
+    end
+    session[:user_id] = @current_user.id
+    current_user
   end
 
   def logout
-    session[:access_token] = nil
+    @current_user = session[:user_id] = nil
   end
 
   def logged_in?
-    if session[:access_token].nil?
+    if current_user.nil?
       redirect_to root_path
     end
   end
 
+  def fetch_instagram_user(access_token)
+    client = Instagram.client(:access_token => access_token)
+    user_params = client.user
+    user_params[:user_id] = user_params[:id]
+    user_params[:access_token] = access_token
+    user_params.reject { | key , _| !User.column_names.include?(key) || key == "id"}
+  end
+
   def current_user
-    client ||= Instagram.client(:access_token => session[:access_token])
-    client.user
+    @current_user ||= User.find_by({id: session[:user_id]})
+    @current_user.client
+    @current_user
   end
 end

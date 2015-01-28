@@ -1,4 +1,10 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
 asdfa
+
 <%= link_to "LOGIN", oauth_connect_path %>
+<%= form_tag("user_search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>

@@ -5,8 +5,9 @@ get "/oauth/connect", to: "sessions#oauth_connect"
 get "/oauth/callback", to: "sessions#oauth_callback"
 get "/profile", to: "users#profile"
 get "/logout", to: "sessions#destroy"
-
-  get 'sessions/new'
+get "/user_search", to: "sites#search"
+get "/tags_search", to: "sites#search"
+  get 'sessions/new' 
 
   get 'sites/index'
 

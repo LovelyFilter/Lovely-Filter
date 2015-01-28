@@ -1,0 +1,13 @@
+<div class="profile-container">
+  <div>
+    <h1>WELCOME <%= @user.username %></h1>
+    <%= link_to "logout", "/logout" %>
+
+    <img src="<%= @user.profile_picture%>" >
+    <div>
+    	<div> bio: <%= @user.bio %></div>
+    	<div> Followed By: <%= @user.counts["followed_by"] %> </div>
+    	<div> Follows: <%= @user.counts["follows"] %> </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,43 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-asdfa
+<div class="main-container">
+		<div class="upper-container">
+			<div class="main-title-login">
+				<div class="row">
+			  	<div class="col-md-6 col-md-offset-5">
 
-<%= link_to "LOGIN", oauth_connect_path %>
-<%= form_tag("user_search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+			  		<h1>Insterest</h1>
+			  		<%= link_to "LOGIN", oauth_connect_path %>
+						<%= form_tag("user_search", method: "get") do %>
+						<%= label_tag(:q, "Search for:") %>
+					  <%= text_field_tag(:q) %>
+					  <%= submit_tag("Search") %>
+						<% end %>
+			  	
+			  	</div>
+	  		</div>
+  		</div>
+  	</div>
+
+  	<div class="lower-main-container">
+	    <div class="lower-container">
+	      <div class="row">
+	        <div class="col-xs-4 offset-xs-3">
+	          <img class="img-circle" src="http://muchneededvacations.com/wp-content/uploads/2014/07/Hawaii-3.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+	          <h2>Personal Collections</h2>
+	          <p>Organize your feed into collections of your chosing</p>
+	        </div>
+	        <div class="col-xs-4">
+	          <img class="img-circle" src="http://cdn1.buuteeq.com/upload/12427/sunset-at-sunset-beach-2010-21.jpg.1140x481_default.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+	          <h2>Search</h2>
+	          <p>Search by hashtag or username</p>
+	        </div>
+	        <div class="col-xs-4">
+	          <img class="img-circle" src="http://365daysofbacon.files.wordpress.com/2013/02/bacon_heart.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+	          <h2>Collections</h2>
+	          <p>Browse coolections we have personally curated for you.</p>
+	        </div><!-- /.col-lg-4 -->
+	      </div><!-- /.row -->
+
+	    </div>
+    </div>
+    
+   </div>

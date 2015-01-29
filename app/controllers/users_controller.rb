@@ -7,6 +7,15 @@ class UsersController < ApplicationController
     render "users/profile"
   end
 
+  # def home
+  # 	@user = current_user
+  # 	p @user
+  # 	puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  # 	@media = current_user.user_media_recent()
+  # 	puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  # 	render "users/profile"
+  # end
+
 end
 
 # class UsersController < ApplicationController

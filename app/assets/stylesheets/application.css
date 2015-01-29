@@ -37,6 +37,15 @@
 
 }
 
+.main-title-login {
+	text-align: center;
+}
+
+.main-title-login h1 {
+	font-size: 100px;
+	text-align: center;
+}
+
 /*.main-container {
 	background: url(https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10628242_10152323698487308_5421806365098827544_n.jpg?oh=acea2e1d0e73a5a39b658eca9ff8541c&oe=5550A4CA&__gda__=1431997343_cc2e6bbabb90fee98499806fd7fe57cf) no-repeat center center fixed;
 	background-size: cover;

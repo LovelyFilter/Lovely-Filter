@@ -1,10 +1,11 @@
 
 
 <div class="profile-container">
-  <div>
+  <div class="main-profile-info col-xs-4 col-xs-offset-4">
     <h1>WELCOME </h1>
     <h2><%= @user.username %></h2>
     <%= link_to "logout", "/logout" %>
+  </div>
 
     <img src="<%= @user.profile_picture%>" >
     <div>
@@ -14,7 +15,7 @@
     </div>
 
     <div id="userFeedCon">
-    
+
     </div>
   </div>
 </div>

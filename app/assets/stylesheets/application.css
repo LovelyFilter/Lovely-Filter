@@ -15,6 +15,10 @@
  *= require bootstrap-3.2.0.min
 */
 
+.profile-container {
+	margin-top: 80px;
+}
+
 .main-container {
 	margin-top: 80px;
 }

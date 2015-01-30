@@ -33,13 +33,11 @@
 	background-color: RGBA(98, 185, 175, 1);
 	height: 400px;
 	width: 100%;
-
 }
 
 .lower-container {
 	padding-top: 50px;
 	margin-left: 200px;
-
 }
 
 .main-title-login {
@@ -59,8 +57,12 @@
 	margin-top: 20px;
 }
 
-.comments {
-	
+.username_search_container {
+	margin-top: 10px;
+}
+
+.user_search_main_container {
+	margin-top: 80px;
 }
 
 /*.main-container {

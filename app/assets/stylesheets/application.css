@@ -17,6 +17,7 @@
 
 .profile-container {
 	margin-top: 80px;
+	margin-left: 0px;
 }
 
 .main-container {
@@ -48,6 +49,14 @@
 .main-title-login h1 {
 	font-size: 100px;
 	text-align: center;
+}
+
+.username {
+	font-size: 25px;
+}
+
+.feed-img {
+	margin-top: 20px;
 }
 
 /*.main-container {

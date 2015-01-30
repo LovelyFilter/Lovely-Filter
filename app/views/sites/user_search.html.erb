@@ -5,11 +5,15 @@
 		<div class="username_search_container">
 			<div class="row" style="display: inline;">
 				<div class="col-xs-4">
-				<div>
-					<%= image_tag result.profile_picture %>
-					<a href="http://www.instagram.com/<%=result.username%>" ><%=result.full_name%></a>
+					<div>
+						<%= image_tag result.profile_picture %>
+						<a href="http://www.instagram.com/<%=result.username%>" target="_blank"><%=result.full_name%></a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 <% end %>
+
+
+ 

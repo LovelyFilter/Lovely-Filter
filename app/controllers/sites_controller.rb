@@ -3,17 +3,16 @@ class SitesController < ApplicationController
 
 
 def user_search
+  #raise params.inspect 
   client = Instagram.client(:access_token => session[:access_token])
-  @search = client.user_search("instagram")
-  for user in @search  
-  end
+  p params
+  @search = client.user_search(params[:q])
 end
 
 def tags_search
   client = Instagram.client(:access_token => session[:access_token])
-  @search = client.tag_search("instagram")
-  for tags in @search
-  end
+  p params
+  @search = client.tag_search(params[:q])
 end
 
 

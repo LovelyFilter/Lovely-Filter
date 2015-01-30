@@ -1,7 +1,7 @@
 module SessionsHelper
   # Assuming you have the route in routes.rb
   # get "/oauth/callback", to: "sessions#callback"
-  CALLBACK_URL = "https://insterest.herokuapp.com"
+  CALLBACK_URL = "https://insterest.herokuapp.com/oauth/callback"
 
   # also on instagram's API management 
   #   you should configure your oauth

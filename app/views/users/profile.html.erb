@@ -2,27 +2,29 @@
 	<div class="upper-container">
 
 		<div class="profile-container">
-		  <div class="main-profile-info col-xs-4 col-xs-offset-4">
-		    <h1>WELCOME </h1>
-		    <h2><%= @user.username %></h2>
+		  <div class="main-profile-info col-xs-12 text-center">
+		    <h2>Welcome <%= @user.username %></h2>
 		    <%= link_to "logout", "/logout" %>
 		  </div>
 
-		    <img src="<%= @user.profile_picture%>" >
+		</div>
+		   <!--  <img src="<%= @user.profile_picture%>" >
 		    <div>
 		    	<div> bio: <%= @user.bio %></div>
 		    	<div> Followed By: <%= @user.counts["followed_by"] %> </div>
 		    	<div> Follows: <%= @user.counts["follows"] %> </div>
-		    </div>
+		    </div> -->
 
-		    <div class="lower-main-container">
+		  <div class="user-Feed-Container col-xs-12 text-center">
 		    <div id="userFeedCon">
 
 		    </div>
 		    
-		    </div>
+		   <!--  <div class="lower-main-container">
+				</div> -->
+		 
 
 		  </div>
-		</div>
+		<!-- </div> -->
 	</div>
 </div>

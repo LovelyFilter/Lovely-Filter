@@ -9,7 +9,7 @@ def user_search
   @search = client.user_search(params[:q])
 end
 
-def tags_search
+def tag_search
   client = Instagram.client(:access_token => session[:access_token])
   p params
   @search = client.tag_search(params[:q])

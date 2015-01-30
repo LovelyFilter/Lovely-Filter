@@ -45,7 +45,7 @@
       </form> -->
 
      </ul>
-      <%= form_tag("/tags_search", method: "get", class: "navbar-form navbar-right", role:"search") do %>
+      <%= form_tag("/tag_search", method: "get", class: "navbar-form navbar-right", role:"search") do %>
             <div class="form-group">
             <div class="input-group">
              <%= text_field_tag(:q, "", { class: "form-control", placeholder: "Hashtag" })%>

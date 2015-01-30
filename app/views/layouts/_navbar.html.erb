@@ -33,7 +33,7 @@
       <%= form_tag("/user_search", method: "get", class: "navbar-form navbar-right", role:"search") do %>
             <div class="form-group">
             <div class="input-group">
-             <%= text_field_tag(:q, "", { class: "form-control", placeholder: "Username or Hashtag" })%>
+             <%= text_field_tag(:q, "", { class: "form-control", placeholder: "Username" })%>
           </div>
       <%= submit_tag("Search") %>
       <% end %>
@@ -44,12 +44,14 @@
         </div>
       </form> -->
 
-     <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search by Username">
-          <button type="submit" class="btn btn-default">Search</button>
-        </div>
-      </form>
+     </ul>
+      <%= form_tag("/tag_search", method: "get", class: "navbar-form navbar-right", role:"search") do %>
+            <div class="form-group">
+            <div class="input-group">
+             <%= text_field_tag(:q, "", { class: "form-control", placeholder: "Hashtag" })%>
+          </div>
+      <%= submit_tag("Search") %>
+      <% end %>
 
 
       <!-- <ul class="nav navbar-nav navbar-right">

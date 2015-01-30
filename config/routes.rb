@@ -6,8 +6,8 @@ get "/oauth/callback", to: "sessions#oauth_callback"
 get "/profile", to: "users#profile"
 get "/user_homepage", to: "users#home"
 get "/logout", to: "sessions#destroy"
-get "/user_search", to: "sites#search"
-get "/tags_search", to: "sites#search"
+get "/user_search", to: "sites#user_search"
+get "/tag_search", to: "sites#tag_search"
   get 'sessions/new' 
 
   get 'sites/index'
